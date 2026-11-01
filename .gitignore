@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.streamlit/secrets.toml
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/user_uploads/
+*.log
+*.bak

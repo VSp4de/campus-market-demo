@@ -1,0 +1,55 @@
+{
+  "dataset": "Mercari 100,000 cleaned listings; prices converted to CNY",
+  "split": {
+    "random_state": 42,
+    "train_rows": 80000,
+    "test_rows": 20000
+  },
+  "features": "Same fitted TF-IDF, one-hot, and numeric transformer as deployed Ridge model",
+  "feature_count": 52661,
+  "target": "ln(price_cny + 1); evaluated after inverse transform in CNY",
+  "note": "Fixed illustrative hyperparameters for tree models; no test-set tuning. Ridge remains deployed.",
+  "hyperparameters": {
+    "random_forest": {
+      "n_estimators": 40,
+      "max_depth": 18,
+      "min_samples_leaf": 5,
+      "max_features": 0.2,
+      "random_state": 42
+    },
+    "xgboost": {
+      "n_estimators": 180,
+      "max_depth": 6,
+      "learning_rate": 0.08,
+      "subsample": 0.85,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 5.0,
+      "tree_method": "hist",
+      "random_state": 42
+    }
+  },
+  "models": {
+    "category_median": {
+      "mae_cny": 104.694958935,
+      "rmse_cny": 258.72788502272056,
+      "r2_cny": -0.0531391041398348
+    },
+    "ridge": {
+      "mae_cny": 74.47561590420472,
+      "rmse_cny": 197.94452955650152,
+      "r2_cny": 0.38356644645806626
+    },
+    "random_forest": {
+      "mae_cny": 86.67210576800268,
+      "rmse_cny": 226.12331982452892,
+      "r2_cny": 0.19556683377417428,
+      "train_seconds": 31.1
+    },
+    "xgboost": {
+      "mae_cny": 83.06738698813689,
+      "rmse_cny": 214.3233040935255,
+      "r2_cny": 0.27733328210263863,
+      "train_seconds": 69.8
+    }
+  }
+}

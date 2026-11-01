@@ -1,0 +1,95 @@
+{
+  "rows_total": 100000,
+  "rows_train": 80000,
+  "rows_test": 20000,
+  "mae_cny": 74.47561590420472,
+  "rmse_cny": 197.94452955650152,
+  "r2_cny": 0.3835664464580665,
+  "price_band_metrics": {
+    "0-50": {
+      "count": 2063,
+      "mae_cny": 32.093056107906065,
+      "median_relative_error_pct": 71.60365767850145
+    },
+    "50-100": {
+      "count": 6204,
+      "mae_cny": 30.361079657589222,
+      "median_relative_error_pct": 29.05984348011412
+    },
+    "100-300": {
+      "count": 9230,
+      "mae_cny": 51.99643586778238,
+      "median_relative_error_pct": 26.01745794805955
+    },
+    "300+": {
+      "count": 2503,
+      "mae_cny": 301.6448669908786,
+      "median_relative_error_pct": 43.760398558360336
+    }
+  },
+  "model": "Ridge regression",
+  "ridge_alpha": 3.0,
+  "validation_mae_cny": 76.81386822723645,
+  "alpha_validation_scores": {
+    "0.3": 83.65214449869198,
+    "1.0": 78.23056044102438,
+    "3.0": 76.81386822723645,
+    "10.0": 78.4932341006713
+  },
+  "target": "log_price_cny = ln(price_cny + 1)",
+  "currency": "CNY",
+  "usd_to_cny": 6.6702,
+  "exchange_rate_date": "2026-10-23",
+  "exchange_rate_source": "Frankfurter / ECB reference rates",
+  "dataset_note": "Mercari US listings converted from USD to CNY; results are not campus transaction prices.",
+  "residual_intervals": {
+    "p10_cny": -67.52690106716857,
+    "p90_cny": 124.6143883449736,
+    "by_actual_price_band": {
+      "0-50": {
+        "count": 1711,
+        "residual_p10_cny": -66.41051054710186,
+        "residual_p90_cny": -3.50033419426115
+      },
+      "50-100": {
+        "count": 4898,
+        "residual_p10_cny": -70.63664389348895,
+        "residual_p90_cny": 14.607114422993549
+      },
+      "100-300": {
+        "count": 7398,
+        "residual_p10_cny": -71.32752943931989,
+        "residual_p90_cny": 85.14213638733571
+      },
+      "300+": {
+        "count": 1993,
+        "residual_p10_cny": -8.590761587435995,
+        "residual_p90_cny": 635.321828202411
+      }
+    },
+    "by_predicted_price_band": {
+      "0-50": {
+        "count": 733,
+        "residual_p10_cny": -17.736274758403866,
+        "residual_p90_cny": 36.29063326404141
+      },
+      "50-100": {
+        "count": 5640,
+        "residual_p10_cny": -33.599215124593435,
+        "residual_p90_cny": 62.02628371022794
+      },
+      "100-300": {
+        "count": 8386,
+        "residual_p10_cny": -79.23192310369573,
+        "residual_p90_cny": 141.16067716929626
+      },
+      "300+": {
+        "count": 1241,
+        "residual_p10_cny": -205.56168404551855,
+        "residual_p90_cny": 625.3518812499282
+      }
+    },
+    "calibration_split": "training data validation split",
+    "coverage_target_pct": 80
+  }
+}
